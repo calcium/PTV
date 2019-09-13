@@ -9,7 +9,8 @@ import types
 
 __version__ = "1.0"
 
-def genSlot(args):
+def renderTemplate(args):
+    """ Usage : renderTemplte templateName inputdata """
     from jinja2 import Template, FileSystemLoader, Environment
 
     templateFn = args[0]
