@@ -1,0 +1,21 @@
+{# this jinja2 template is used to generate json directives for loading slot types into Amazon Lex #}
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "{{ slotTypeName }}",
+    "version": "{{ slotTypeVersion }}",
+    "enumerationValues": [
+  {% for n in slotTypeValues %}
+      {
+        "value": "{{n}}",
+        "synonyms": []
+      },
+  {% endfor %}
+    ],
+    "valueSelectionStrategy": "ORIGINAL_VALUE"
+  }
+}
